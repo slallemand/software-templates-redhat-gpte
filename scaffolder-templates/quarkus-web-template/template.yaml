@@ -137,12 +137,20 @@ spec:
           quay_destination: ${{ parameters.image_organization}}/${{ parameters.component_id }}
           port: 8080
 
+    # - id: publish
+    #   name: Publish
+    #   action: publish:gitlab
+    #   input:
+    #     repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}"
+    #     repoVisibility: public
+
     - id: publish
-      name: Publish
-      action: publish:gitlab
+      name: Publishing to the Source Code Repository
+      action: publish:github
       input:
-        repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}"
-        repoVisibility: public
+        allowedHosts: ['github.com']
+        repoUrl: github.com?owner=${{ parameters.repo.owner }}&repo=${{ parameters.component_id }}
+        defaultBranch: main
 
     - id: register
       name: Register
