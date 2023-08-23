@@ -151,6 +151,7 @@ spec:
         allowedHosts: ['github.com']
         repoUrl: github.com?owner=${{ parameters.repo.owner }}&repo=${{ parameters.component_id }}
         defaultBranch: main
+        repoVisibility: public
 
     - id: register
       name: Register
