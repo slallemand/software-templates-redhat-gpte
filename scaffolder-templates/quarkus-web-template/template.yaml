@@ -209,8 +209,8 @@ spec:
       input:
         appName: ${{ parameters.component_id }}-bootstrap
         argoInstance: main
-        namespace: janus-argocd
-        repoUrl: https://${{ parameters.repo.host }}/${{ parameters.repo.owner }}/${{ parameters.component_id }}-gitops.git
+        namespace: openshift-gitops
+        repoUrl: "https://github.com?owner=${{ parameters.repo.owner }}&repo=${{ parameters.component_id }}-gitops"
         path: 'argocd/'
 
   output:
