@@ -72,25 +72,25 @@ spec:
                   default: latest
                   type: string
                   description: Build Image tag
-            - properties:
-                image_registry:
-                  enum:
-                    - Quay
-                image_host:
-                  title: Image Host
-                  type: string
-                  description: Host for storing image
-                  default: quay-jr597.apps.cluster-jr597.sandbox426.opentlc.com
-                image_organization:
-                  title: Organization
-                  type: string
-                  description: Name of the Quay Organization
-                  default: quayadmin
-                image_tag:
-                  title: Image Tag
-                  default: latest
-                  type: string
-                  description: Build Image tag
+            # - properties:
+            #     image_registry:
+            #       enum:
+            #         - Quay
+            #     image_host:
+            #       title: Image Host
+            #       type: string
+            #       description: Host for storing image
+            #       default: quay-jr597.apps.cluster-jr597.sandbox426.opentlc.com
+            #     image_organization:
+            #       title: Organization
+            #       type: string
+            #       description: Name of the Quay Organization
+            #       default: quayadmin
+            #     image_tag:
+            #       title: Image Tag
+            #       default: latest
+            #       type: string
+            #       description: Build Image tag
     - title: Application repository Information
       required:
         - repo
@@ -103,16 +103,17 @@ spec:
               title: Repo Host
               type: string
               description: Your SCM host
-              default: gitlab-gitlab.apps.cluster-jr597.sandbox426.opentlc.com
+              default: github.com
               enum:
-                - gitlab-gitlab.apps.cluster-jr597.sandbox426.opentlc.com
+                - github.com
             owner:
               title: Repo Owner
               type: string
               description: Your SCM host organization/group
-              default: rhdh
+              default: slallemand
               enum:
-                - rhdh
+                - slallemand
+                - Janus-france-ssa
 
   steps:
     - id: template
