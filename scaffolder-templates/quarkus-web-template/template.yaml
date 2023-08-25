@@ -114,6 +114,7 @@ spec:
               enum:
                 - slallemand
                 - Janus-france-ssa
+                - RedHat-Summit-Connect-France-2023
 
   steps:
     - id: template
